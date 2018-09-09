@@ -21,7 +21,7 @@ import retrofit2.Response;
 public class DetailPresenter <V extends DetailMvpView> extends BasePresenter<V> implements DetailMvpPresenter<V> {
 
     @Override
-    public void getImages(String id) {
+    public void getImages(int id) {
         DataClient dataClient = APIUltis.getData();
         Call<ImageLocation> callback = dataClient.searchImage(CommonUtils.client_id, CommonUtils.client_secret);
         callback.enqueue(new Callback<ImageLocation>() {

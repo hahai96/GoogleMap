@@ -1,4 +1,4 @@
-package com.example.ha_hai.googlemap.ui.replaces;
+package com.example.ha_hai.googlemap.ui.places;
 
 import com.example.ha_hai.googlemap.Retrofit.POJO.FoursquareResults;
 import com.example.ha_hai.googlemap.ui.base.MvpView;

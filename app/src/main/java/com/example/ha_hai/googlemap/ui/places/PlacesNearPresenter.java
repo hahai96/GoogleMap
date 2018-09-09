@@ -1,4 +1,4 @@
-package com.example.ha_hai.googlemap.ui.replaces;
+package com.example.ha_hai.googlemap.ui.places;
 
 import android.location.Location;
 import com.example.ha_hai.googlemap.Utils.CommonUtils;

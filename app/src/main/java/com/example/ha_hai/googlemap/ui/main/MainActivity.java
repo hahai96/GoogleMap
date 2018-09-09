@@ -7,7 +7,6 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.media.AudioRouting;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -16,7 +15,7 @@ import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.example.ha_hai.googlemap.ui.replaces.PlacesNearActivity;
+import com.example.ha_hai.googlemap.ui.places.PlacesNearActivity;
 import com.example.ha_hai.googlemap.R;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -55,19 +54,15 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
-
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
         this.googleMap = googleMap;
-        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
         if (checkPermission()) {
             googleMap.setMyLocationEnabled(true);
-            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, MIN_TIME, MIN_DISTANCE, this);
         }
 
         googleMap.setOnMarkerClickListener(this);
@@ -75,16 +70,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     public boolean onMarkerClick(Marker marker) {
-//        LatLng tranHungDao = new LatLng(location.getLatitude(), location.getLongitude());
-//
-//        MarkerOptions vitri1 = new MarkerOptions();
-//        vitri1.draggable(true);
-//        vitri1.position(tranHungDao);
-//        vitri1.title("393 Tran Hung Dao");
-//        vitri1.snippet("Day la tru so CSGT");
-//
-//        Marker marker = googleMap.addMarker(vitri1);
-//        marker.showInfoWindow();
         return true;
     }
 
@@ -121,7 +106,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                         public void onPermissionsChecked(MultiplePermissionsReport report) {
 
                             if (report.areAllPermissionsGranted()) {
+                                if (googleMap != null) {
+                                    googleMap.setMyLocationEnabled(true);
 
+                                    locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+                                    locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, MIN_TIME, MIN_DISTANCE, MainActivity.this);
+                                }
                             }
 
                             if (report.isAnyPermissionPermanentlyDenied()) {

@@ -32,7 +32,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBNhqJALnECVD0wYtbVy4nisZSLcrQPIZ8" />
 
-        <activity android:name=".ui.replaces.PlacesNearActivity" />
+        <activity android:name=".ui.places.PlacesNearActivity" />
         <activity android:name=".ui.detail.DetailActivity"></activity>
     </application>
 

@@ -1,4 +1,4 @@
-package com.example.ha_hai.googlemap.ui.replaces;
+package com.example.ha_hai.googlemap.ui.places;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
@@ -9,18 +9,10 @@ import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.widget.Toast;
 
 import com.example.ha_hai.googlemap.R;
-import com.example.ha_hai.googlemap.Retrofit.APIUltis;
-import com.example.ha_hai.googlemap.Retrofit.DataClient;
-import com.example.ha_hai.googlemap.Retrofit.POJO.FoursquareGroup;
-import com.example.ha_hai.googlemap.Retrofit.POJO.FoursquareJSON;
-import com.example.ha_hai.googlemap.Retrofit.POJO.FoursquareResponse;
 import com.example.ha_hai.googlemap.Retrofit.POJO.FoursquareResults;
 import com.example.ha_hai.googlemap.adapter.PlacesNearAdapter;
-import com.example.ha_hai.googlemap.ui.main.MainActivity;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -29,9 +21,6 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class PlacesNearActivity extends AppCompatActivity implements PlacesNearMvpView{
 

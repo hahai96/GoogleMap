@@ -6,6 +6,6 @@ import java.util.List;
 public class FoursquareGroup {
 
     // A results list within the group.
-    public List<FoursquareResults> results = new ArrayList<FoursquareResults>();
+    public List<FoursquareResults> results = new ArrayList<>();
 
 }

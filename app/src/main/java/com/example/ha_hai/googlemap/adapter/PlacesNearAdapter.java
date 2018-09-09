@@ -71,6 +71,7 @@ public class PlacesNearAdapter extends RecyclerView.Adapter<PlacesNearAdapter.Pl
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(context, DetailActivity.class);
+                    intent.putExtra("id", items.get(getAdapterPosition()).venue.id);
                     context.startActivity(intent);
                 }
             });

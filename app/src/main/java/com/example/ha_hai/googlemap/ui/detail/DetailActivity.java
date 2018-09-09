@@ -9,7 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
 
 import com.example.ha_hai.googlemap.R;
-import com.example.ha_hai.googlemap.Retrofit.image.*;
+import com.example.ha_hai.googlemap.Retrofit.image.Item;
 import com.example.ha_hai.googlemap.Utils.GridSpacingItemDecoration;
 import com.example.ha_hai.googlemap.adapter.ImageRecyclerAdapter;
 
@@ -32,8 +32,12 @@ public class DetailActivity extends AppCompatActivity implements DetailMvpView {
 
         ButterKnife.bind(this);
 
+        int id = getIntent().getIntExtra("intent", 0);
+
         detailPresenter = new DetailPresenter();
-        detailPresenter.getImages();
+        detailPresenter.onAttach(this);
+
+        detailPresenter.getImages(id);
     }
 
     @Override
@@ -49,5 +53,10 @@ public class DetailActivity extends AppCompatActivity implements DetailMvpView {
     private int dpToPx(int dp) {
         Resources r = getResources();
         return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 }

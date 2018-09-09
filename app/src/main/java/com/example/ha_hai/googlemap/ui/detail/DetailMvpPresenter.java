@@ -8,5 +8,5 @@ import com.example.ha_hai.googlemap.ui.base.MvpPresenter;
 
 public interface DetailMvpPresenter <V extends DetailMvpView> extends MvpPresenter<V> {
 
-    void getImages(String id);
+    void getImages(int id);
 }
