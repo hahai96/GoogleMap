@@ -1,6 +1,6 @@
 package com.example.ha_hai.googlemap.Retrofit;
 
-import com.example.ha_hai.googlemap.Retrofit.POJO.FoursquareJSON;
+import com.example.ha_hai.googlemap.Retrofit.places.FoursquareJSON;
 import com.example.ha_hai.googlemap.Retrofit.image.ImageLocation;
 
 import retrofit2.Call;

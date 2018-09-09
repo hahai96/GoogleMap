@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.example.ha_hai.googlemap.ui.detail.DetailActivity;
 import com.example.ha_hai.googlemap.R;
-import com.example.ha_hai.googlemap.Retrofit.POJO.FoursquareResults;
+import com.example.ha_hai.googlemap.Retrofit.places.FoursquareResults;
 
 import java.util.List;
 

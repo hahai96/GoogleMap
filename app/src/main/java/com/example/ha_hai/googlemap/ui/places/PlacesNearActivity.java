@@ -11,7 +11,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.example.ha_hai.googlemap.R;
-import com.example.ha_hai.googlemap.Retrofit.POJO.FoursquareResults;
+import com.example.ha_hai.googlemap.Retrofit.places.FoursquareResults;
 import com.example.ha_hai.googlemap.adapter.PlacesNearAdapter;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;

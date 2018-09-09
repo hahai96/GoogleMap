@@ -1,7 +1,4 @@
-package com.example.ha_hai.googlemap.Retrofit.POJO;
-
-import java.util.ArrayList;
-import java.util.List;
+package com.example.ha_hai.googlemap.Retrofit.places;
 
 public class FoursquareResponse {
 

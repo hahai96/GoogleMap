@@ -1,6 +1,6 @@
 package com.example.ha_hai.googlemap.ui.places;
 
-import com.example.ha_hai.googlemap.Retrofit.POJO.FoursquareResults;
+import com.example.ha_hai.googlemap.Retrofit.places.FoursquareResults;
 import com.example.ha_hai.googlemap.ui.base.MvpView;
 
 import java.util.List;

@@ -27,12 +27,12 @@ public class DetailPresenter <V extends DetailMvpView> extends BasePresenter<V> 
         callback.enqueue(new Callback<ImageLocation>() {
             @Override
             public void onResponse(Call<ImageLocation> call, Response<ImageLocation> response) {
-                ImageLocation json = response.body();
-                com.example.ha_hai.googlemap.Retrofit.image.Response rp = json.getResponse();
-                Photos photos = rp.getPhotos();
-                List<Item> items = photos.getItems();
-
-                getMvpView().setAdapter(items);
+//                ImageLocation json = response.body();
+//                com.example.ha_hai.googlemap.Retrofit.image.Response rp = json.getResponse();
+//                Photos photos = rp.getPhotos();
+//                List<Item> items = photos.getItems();
+//
+//                getMvpView().setAdapter(items);
             }
 
             @Override

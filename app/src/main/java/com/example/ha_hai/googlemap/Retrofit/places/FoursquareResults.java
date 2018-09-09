@@ -1,4 +1,4 @@
-package com.example.ha_hai.googlemap.Retrofit.POJO;
+package com.example.ha_hai.googlemap.Retrofit.places;
 
 public class FoursquareResults {
 

@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.net.ConnectivityManager;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import android.os.Bundle;
 import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.ha_hai.googlemap.ui.places.PlacesNearActivity;
 import com.example.ha_hai.googlemap.R;
@@ -50,20 +52,19 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        requestPermission();
-
         mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        
+        if (checkPermissionInternet() == false) {
+            Toast.makeText(this, "Please enable internet connection and try again...", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
         this.googleMap = googleMap;
-
-        if (checkPermission()) {
-            googleMap.setMyLocationEnabled(true);
-        }
+        requestPermission();
 
         googleMap.setOnMarkerClickListener(this);
     }
@@ -106,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                         public void onPermissionsChecked(MultiplePermissionsReport report) {
 
                             if (report.areAllPermissionsGranted()) {
-                                if (googleMap != null) {
+                                if (googleMap != null && checkPermission()) {
                                     googleMap.setMyLocationEnabled(true);
 
                                     locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -138,6 +139,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
     }
 
+    private boolean checkPermissionInternet() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        return cm.getActiveNetworkInfo() != null;
+    }
 
     public void openPlacesNearActivity(String query) {
         Intent intent = new Intent(MainActivity.this, PlacesNearActivity.class);
