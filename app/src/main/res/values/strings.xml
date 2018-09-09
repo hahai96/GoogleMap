@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">GoogleMap</string>
+
+    <string name="foursquare_client_id" templateMergeStrategy="preserve" translatable="false">
+        3XJUENSLFJKHXJWODQAOCSJ1TI2HJ3N4XYH40C2DLXFCXOWO
+    </string>
+
+    <string name="foursquare_client_secret" templateMergeStrategy="preserve" translatable="false">
+        KNSIVCJTB54N0LYSY1VRE40Q3XHHKMDOKD4BW4YW2L2ZOGXL
+    </string>
+
+    <string name="action_settings">Settings</string>
+    <string name="toolbar_profile">Profile</string>
+    <string name="posts">POSTS</string>
+    <string name="followers">FOLLOWERS</string>
+    <string name="following">FOLLOWING</string>
+</resources>
